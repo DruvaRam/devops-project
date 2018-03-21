@@ -20,7 +20,8 @@
       "Properties" : {
         "EnableDnsSupport": "true",
         "EnableDnsHostnames": "true",
-        "CidrBlock" : { "Ref" : "CIDR"}
+        "CidrBlock" : { "Ref" : "CIDR"},
+        "Tags" : [ { "Key" : "Name", "Value" : "Project" } ]
       }
     },
     "PublicSubnet": {
@@ -32,7 +33,8 @@
           "Ref": "VPCProject"
         },
         "AvailabilityZone" : "us-east-1a",
-        "MapPublicIpOnLaunch" : "True"
+        "MapPublicIpOnLaunch" : "True",
+        "Tags" : [ { "Key" : "Name", "Value" : "Project" } ]
       }
     },
     "NewInternetGateway": {
@@ -55,7 +57,8 @@
       "Properties": {
         "VpcId": {
           "Ref": "VPCProject"
-        }
+        },
+        "Tags" : [ { "Key" : "Name", "Value" : "Project" } ]
       }
     },
     "PublicRoute": {
